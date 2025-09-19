@@ -1,0 +1,46 @@
+export const API_ENDPOINTS = {
+  USERS: "users",
+  REGISTER: "register",
+  PRODUCTS: "products",
+  TYPES: "types",
+  POPULAR_PRODUCTS: "popular-products",
+  COUPONS: "coupons",
+  ACTIVATE: "activate",
+  VERIFY_COUPONS: "coupons/verify",
+  CUSTOMERS: "customers",
+  TAXES: "taxes",
+  SHIPPINGS: "shippings",
+  SETTINGS: "settings",
+  CATEGORIES: "categories",
+  LOGOUT: "logout",
+  LOGIN: "login",
+  GOOGLE: "google",
+  ADDRESSES: "addresses",
+  ME: "me",
+  TOKEN: "token",
+  BLOCK_USER: "users/block-user",
+  CHANGE_PASSWORD: "change-password",
+  FORGET_PASSWORD: "forget-password",
+
+  RESET_PASSWORD: "reset-password",
+
+  // CMS Endpoints
+  CMS: {
+    CONTENT: "cms/content",
+    PRODUCTS: "cms/products",
+    CATEGORIES: "cms/categories",
+    BANNERS: "cms/banners",
+    PAGES: "cms/pages",
+    SETTINGS: "cms/settings",
+    UPLOADS: "cms/uploads",
+    ANALYTICS: "cms/analytics",
+    BACKUP: "cms/backup",
+    VERSIONS: "cms/versions",
+    HEALTH_ATTRIBUTES: "cms/health-attributes",
+    INGREDIENTS: "cms/ingredients",
+    ALLERGENS: "cms/allergens",
+    NUTRITION: "cms/nutrition",
+    DASHBOARD: "cms/dashboard",
+    AUDIT: "cms/audit"
+  }
+};
