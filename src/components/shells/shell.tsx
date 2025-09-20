@@ -31,10 +31,11 @@ function Shell({
   children,
   ...props
 }: ShellProps) {
+  const Component = Comp as any
   return (
-    <Comp className={cn(shellVariants({ variant }), className)} {...props}>
+    <Component className={cn(shellVariants({ variant }), className)} {...props}>
       {children}
-    </Comp>
+    </Component>
   )
 }
 

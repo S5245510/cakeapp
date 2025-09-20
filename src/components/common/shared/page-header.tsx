@@ -5,8 +5,11 @@ import { Balancer } from "react-wrap-balancer"
 
 import { cn } from "@/lib/utils"
 
-interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PageHeaderProps {
+  className?: string
+  children?: React.ReactNode
   as?: React.ElementType
+  [key: string]: any
 }
 
 function PageHeader({
@@ -15,10 +18,11 @@ function PageHeader({
   as: Comp = "section",
   ...props
 }: PageHeaderProps) {
+  const Component = Comp as any
   return (
-    <Comp className={cn("grid gap-1", className)} {...props}>
+    <Component className={cn("grid gap-1", className)} {...props}>
       {children}
-    </Comp>
+    </Component>
   )
 }
 

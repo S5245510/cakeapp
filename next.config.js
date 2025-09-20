@@ -2,9 +2,6 @@ const withNextIntl = require('next-intl/plugin')('./src/i18n/i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     domains: ['res.cloudinary.com', 'lh3.googleusercontent.com','www.leafrootfruit.com.au'],
     remotePatterns: [
