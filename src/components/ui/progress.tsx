@@ -8,15 +8,17 @@ interface ProgressBarProps {
   value: number;
   color?: IColor;
   animated?: boolean;
+  className?: string;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   value,
   color = "rose",
   animated = false,
+  className,
 }) => {
   return (
-    <div className="h-3 bg-gray-300 rounded-[0.25rem] overflow-hidden">
+    <div className={cn("h-3 bg-gray-300 rounded-[0.25rem] overflow-hidden", className)}>
       <div
         className={cn(getColorClass(color), "h-full")}
         style={{

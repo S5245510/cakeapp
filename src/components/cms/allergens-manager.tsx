@@ -69,9 +69,15 @@ const commonAllergens = [
   },
   {
     name: 'Sesame',
-    severity: 'medium' as const,
+    severity: 'low' as const,
     description: 'Contains sesame seeds or sesame oil',
     icon: '🌱'
+  },
+  {
+    name: 'Artificial Colors',
+    severity: 'low' as const,
+    description: 'Contains artificial food coloring',
+    icon: '🎨'
   }
 ];
 

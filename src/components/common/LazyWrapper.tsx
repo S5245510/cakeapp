@@ -30,7 +30,7 @@ export function LazyWrapper({
   const shouldRender = once ? hasBeenVisible : isVisible;
 
   return (
-    <div ref={elementRef} className={className}>
+    <div ref={elementRef as React.RefObject<HTMLDivElement>} className={className}>
       {shouldRender ? children : (fallback || <LoadingSkeleton lines={3} />)}
     </div>
   );

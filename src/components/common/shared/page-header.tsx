@@ -39,19 +39,23 @@ const headingVariants = cva(
 )
 
 interface PageHeaderHeadingProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
+  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'>,
     VariantProps<typeof headingVariants> {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  children?: React.ReactNode
 }
 
 function PageHeaderHeading({
   className,
   size,
+  children,
   as: Comp = "h1",
   ...props
 }: PageHeaderHeadingProps) {
   return (
-    <Comp className={cn(headingVariants({ size, className }))} {...props} />
+    <Comp className={cn(headingVariants({ size, className }))} {...props}>
+      {children}
+    </Comp>
   )
 }
 

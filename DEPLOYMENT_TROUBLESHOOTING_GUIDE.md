@@ -95,7 +95,74 @@ export const Icons = {
 - Use common, well-established icon names
 - Keep lucide-react updated to latest version
 
-### 3. React Unescaped Entities
+### 3. TypeScript Component Interface Errors
+
+**Error Pattern:**
+```
+Type error: Property 'className' does not exist on type 'IntrinsicAttributes & ComponentProps'.
+Type error: This JSX tag's 'children' prop expects type 'never'
+```
+
+**Root Cause:**
+- Missing props in component interfaces
+- Incorrect type inheritance for components
+- Component not accepting required props like `className` or `children`
+
+**Solutions:**
+```typescript
+// ❌ Problematic - missing className prop
+interface ProgressBarProps {
+  value: number;
+  color?: IColor;
+  animated?: boolean;
+}
+
+// ✅ Fixed - added className prop
+interface ProgressBarProps {
+  value: number;
+  color?: IColor;
+  animated?: boolean;
+  className?: string;
+}
+
+// ❌ Problematic - children type conflict
+interface ComponentProps extends React.HTMLAttributes<HTMLElement> {
+  // HTMLAttributes includes children, causing conflicts
+}
+
+// ✅ Fixed - exclude children and redefine
+interface ComponentProps
+  extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
+  children?: React.ReactNode;
+}
+```
+
+**Additional TypeScript Fixes:**
+```typescript
+// Fix Stripe API version error
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2025-08-27.basil', // Use latest supported version
+});
+
+// Fix comparison type errors by ensuring all cases are covered
+const severityConfig = ['low', 'medium', 'high'] as const;
+// Ensure all values exist in your data
+
+// Fix i18n configuration missing locale
+return {
+  locale: locale as string, // Explicit type casting
+  messages: (await import(`./messages/${locale}.json`)).default,
+  // ... other config
+};
+```
+
+**Prevention:**
+- Always include common props like `className` and `children` in component interfaces
+- Use `Omit` utility type to exclude conflicting inherited props
+- Run `npx tsc --noEmit` before deployment
+- Keep dependencies updated to latest compatible versions
+
+### 4. React Unescaped Entities
 
 **Error Pattern:**
 ```

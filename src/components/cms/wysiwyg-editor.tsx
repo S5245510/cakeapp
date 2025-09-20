@@ -119,7 +119,7 @@ export function WysiwygEditor({ content, onChange, placeholder, className }: Wys
         className="min-h-[200px] p-4 focus:outline-none prose prose-sm max-w-none"
         data-placeholder={placeholder}
         style={{
-          emptyState: content ? 'none' : 'block'
+          display: content ? 'block' : 'block'
         }}
       />
       
