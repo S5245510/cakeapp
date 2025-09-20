@@ -382,10 +382,10 @@ export default function CustomCakePage() {
                                 <SelectValue />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="1">Small (6")</SelectItem>
-                                <SelectItem value="1.5">Medium (8")</SelectItem>
-                                <SelectItem value="2">Large (10")</SelectItem>
-                                <SelectItem value="2.5">Extra Large (12")</SelectItem>
+                                <SelectItem value="1">Small (6&quot;)</SelectItem>
+                                <SelectItem value="1.5">Medium (8&quot;)</SelectItem>
+                                <SelectItem value="2">Large (10&quot;)</SelectItem>
+                                <SelectItem value="2.5">Extra Large (12&quot;)</SelectItem>
                               </SelectContent>
                             </Select>
                           </div>

@@ -15,7 +15,7 @@ import {
   ShoppingCart,
   Percent,
   Timer,
-  Fire,
+  Flame,
   TrendingUp
 } from 'lucide-react';
 
@@ -144,7 +144,7 @@ const SpecialOffer = () => {
             {/* Stats */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {[
-                { icon: <Fire className="w-5 h-5" />, label: `${urgentOffers.length} Flash Sales Active` },
+                { icon: <Flame className="w-5 h-5" />, label: `${urgentOffers.length} Flash Sales Active` },
                 { icon: <Percent className="w-5 h-5" />, label: 'Up to 50% Off' },
                 { icon: <Users className="w-5 h-5" />, label: '2,500+ Claims Today' }
               ].map((stat, index) => (
@@ -163,7 +163,7 @@ const SpecialOffer = () => {
             <div className="container mx-auto px-4">
               <div className="text-center">
                 <div className="flex justify-center items-center mb-4">
-                  <Fire className="w-8 h-8 mr-3 animate-pulse" />
+                  <Flame className="w-8 h-8 mr-3 animate-pulse" />
                   <h2 className="text-2xl font-bold">URGENT: Flash Sale Ending Soon!</h2>
                 </div>
                 <div className="flex space-x-2 justify-center text-center">

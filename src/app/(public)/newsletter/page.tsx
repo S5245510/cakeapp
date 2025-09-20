@@ -72,7 +72,7 @@ const NewsLetter = () => {
               </div>
               <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome to Our Newsletter!</h1>
               <p className="text-gray-600 mb-6">
-                Thank you for subscribing! You'll receive your first newsletter within the next 24 hours.
+                Thank you for subscribing! You&apos;ll receive your first newsletter within the next 24 hours.
               </p>
               <Button
                 onClick={() => window.location.href = '/'}

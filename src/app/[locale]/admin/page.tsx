@@ -95,7 +95,7 @@ export default function AdminDashboard() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Welcome back!</h1>
-          <p className="text-gray-600 mt-1">Here's what's happening with your cake shop today.</p>
+          <p className="text-gray-600 mt-1">Here&apos;s what&apos;s happening with your cake shop today.</p>
         </div>
         <Button asChild className="mt-4 md:mt-0">
           <Link href="/admin/products/new">

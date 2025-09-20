@@ -54,4 +54,6 @@ const MultiProgressBar: React.FC<MultiProgressBarProps> = ({ bars }) => {
   );
 };
 
-export { MultiProgressBar, ProgressBar };
+const Progress = ProgressBar;
+
+export { MultiProgressBar, ProgressBar, Progress };

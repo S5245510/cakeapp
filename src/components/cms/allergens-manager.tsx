@@ -424,7 +424,7 @@ export function AllergensManager({ allergens, onChange }: AllergensManagerProps)
                 <li>• <strong>High Risk:</strong> Life-threatening allergies (nuts, shellfish)</li>
                 <li>• <strong>Medium Risk:</strong> Common allergies with moderate reactions</li>
                 <li>• <strong>Low Risk:</strong> Mild sensitivities or intolerances</li>
-                <li>• Always include "may contain" warnings for cross-contamination</li>
+                <li>• Always include &quot;may contain&quot; warnings for cross-contamination</li>
                 <li>• Keep allergen information up-to-date and accurate</li>
               </ul>
             </div>

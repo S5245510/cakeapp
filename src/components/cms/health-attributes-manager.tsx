@@ -312,7 +312,7 @@ export function HealthAttributesManager({ attributes, onChange }: HealthAttribut
                 <li>• Health attributes help customers make informed dietary choices</li>
                 <li>• Verified attributes are highlighted to customers with a trust badge</li>
                 <li>• Use clear, simple language that customers will understand</li>
-                <li>• Include specific values when possible (e.g., "5g sugar" vs "Low sugar")</li>
+                <li>• Include specific values when possible (e.g., &quot;5g sugar&quot; vs &quot;Low sugar&quot;)</li>
               </ul>
             </div>
           </div>

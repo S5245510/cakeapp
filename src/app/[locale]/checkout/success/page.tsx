@@ -86,7 +86,7 @@ export default function CheckoutSuccessPage() {
             Order Confirmed!
           </h1>
           <p className="text-lg text-gray-600">
-            Thank you for your order. We'll start preparing your delicious healthy cakes right away!
+            Thank you for your order. We&apos;ll start preparing your delicious healthy cakes right away!
           </p>
         </div>
 
