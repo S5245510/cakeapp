@@ -125,7 +125,7 @@ const NewsLetter = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">What You'll Get</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">What You&apos;ll Get</h2>
               <p className="text-xl text-gray-600">Exclusive content delivered straight to your inbox</p>
             </div>
 
@@ -235,7 +235,7 @@ const NewsLetter = () => {
                         <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-4">"{testimonial.comment}"</p>
+                    <p className="text-gray-600 italic mb-4">&quot;{testimonial.comment}&quot;</p>
                     <p className="font-semibold">{testimonial.name}</p>
                   </CardContent>
                 </Card>

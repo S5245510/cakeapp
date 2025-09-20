@@ -168,7 +168,7 @@ export default function CheckoutSuccessPage() {
               )}
               <div className="bg-blue-50 p-3 rounded-lg">
                 <p className="text-sm text-blue-700">
-                  You'll receive a confirmation email with tracking information once your order is prepared.
+                  You&apos;ll receive a confirmation email with tracking information once your order is prepared.
                 </p>
               </div>
             </CardContent>
@@ -188,7 +188,7 @@ export default function CheckoutSuccessPage() {
                 </div>
                 <h3 className="font-medium mb-2">Order Confirmation</h3>
                 <p className="text-sm text-gray-600">
-                  You'll receive a detailed confirmation email within a few minutes.
+                  You&apos;ll receive a detailed confirmation email within a few minutes.
                 </p>
               </div>
               <div className="text-center">

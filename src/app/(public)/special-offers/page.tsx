@@ -138,7 +138,7 @@ const SpecialOffer = () => {
               Special Offers & Deals
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Sweet savings on healthy, organic cakes. Limited time offers you don't want to miss!
+              Sweet savings on healthy, organic cakes. Limited time offers you don&apos;t want to miss!
             </p>
 
             {/* Stats */}
@@ -278,7 +278,7 @@ const SpecialOffer = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">All Special Offers</h2>
-              <p className="text-xl text-gray-600">Don't miss out on these amazing deals</p>
+              <p className="text-xl text-gray-600">Don&apos;t miss out on these amazing deals</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
