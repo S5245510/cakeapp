@@ -150,10 +150,23 @@ done
 npm run build 2>&1 | grep "Attempted import error"
 ```
 
-### 2. Icon Verification
+### 2. Icon Audit & Verification
 ```bash
-# Check for potentially problematic icons
+# Comprehensive icon audit script
+# Step 1: Extract all icon usage from codebase
+grep -ro "Icons\.\w\+" ./src | sed 's/.*Icons\.//' | sort | uniq > used-icons.txt
+
+# Step 2: Extract available icons from Icons component
+grep -o "\w\+:" ./src/components/ui/icons.tsx | sed 's/:$//' | sort > available-icons.txt
+
+# Step 3: Find missing icons
+comm -23 used-icons.txt available-icons.txt > missing-icons.txt
+
+# Step 4: Check for problematic lucide icons
 grep -r "from 'lucide-react'" src/ | grep -E "(Fire|Flame|etc)"
+
+# Step 5: Verify TypeScript compilation
+npx tsc --noEmit --skipLibCheck 2>&1 | grep -i "Property.*does not exist.*Icons"
 ```
 
 ### 3. Entity Validation
@@ -233,14 +246,68 @@ find src/ -name "*.tsx" -o -name "*.jsx" | xargs sed -i \
 - Configure build pipeline to match platform requirements
 - Test locally with production build settings
 
+## Icon Audit Automation Script
+
+Save this as `audit-icons.sh` in your project root:
+
+```bash
+#!/bin/bash
+echo "🔍 Starting comprehensive icon audit..."
+
+# Extract all icon usage
+echo "📊 Extracting icon usage from codebase..."
+grep -ro "Icons\.\w\+" ./src | sed 's/.*Icons\.//' | sort | uniq > used-icons.txt
+echo "Found $(wc -l < used-icons.txt) unique icon references"
+
+# Extract available icons
+echo "📋 Checking available icons in component..."
+grep -o "\w\+:" ./src/components/ui/icons.tsx | sed 's/:$//' | grep -v "sun\|moon\|star\|twitter\|close\|spinner" | sort > available-icons.txt
+echo "Found $(wc -l < available-icons.txt) available icons"
+
+# Find missing icons
+echo "❌ Finding missing icons..."
+comm -23 used-icons.txt available-icons.txt > missing-icons.txt
+
+if [ -s missing-icons.txt ]; then
+  echo "🚨 Missing icons found:"
+  cat missing-icons.txt
+  echo ""
+  echo "💡 Add these to your Icons component:"
+  echo "// In imports:"
+  while IFS= read -r icon; do
+    capitalized=$(echo "${icon^}" | sed 's/.*/\u&/')
+    echo "  $capitalized,"
+  done < missing-icons.txt
+  echo ""
+  echo "// In Icons object:"
+  while IFS= read -r icon; do
+    capitalized=$(echo "${icon^}" | sed 's/.*/\u&/')
+    echo "  $icon: $capitalized,"
+  done < missing-icons.txt
+  exit 1
+else
+  echo "✅ All icons are available!"
+fi
+
+# Cleanup
+rm -f used-icons.txt available-icons.txt missing-icons.txt
+echo "🎉 Icon audit completed successfully!"
+```
+
 ## Quick Reference Commands
 
 ```bash
+# Run comprehensive icon audit
+./audit-icons.sh
+
 # Find and fix common issues
 npm run lint --fix
 npm run build
 grep -r "&apos;" src/  # Verify entity fixes
 grep -r "from 'lucide-react'" src/ # Check icon imports
+
+# Check TypeScript compilation for icon errors
+npx tsc --noEmit --skipLibCheck 2>&1 | grep -i "Property.*does not exist.*Icons"
 ```
 
 ## Troubleshooting Workflow
