@@ -115,7 +115,7 @@ export const Icons = {
   send: Send,
   group: Boxes,
   copy: Copy,
-  downlaod: Download,
+  download: Download,
   warning: AlertTriangle,
   search: Search,
   filter: Filter,
